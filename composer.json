@@ -1,0 +1,15 @@
+{
+    "name": "baras/livre",
+    "autoload": {
+        "psr-4": {
+            "livre\\": "src/"
+        }
+    },
+    "authors": [
+        {
+            "name": "s29duckys",
+            "email": "nbarasraso@edenschool.fr"
+        }
+    ],
+    "require": {}
+}
