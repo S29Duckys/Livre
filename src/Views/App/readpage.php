@@ -12,9 +12,14 @@ ob_start();
     </header>
 
     <main class="book-container">
-        <article class="book-cont
+        <div class="page">
+            <h2><?= htmlspecialchars($book['title']) ?></h2>
+            <p><?= htmlspecialchars($book['description']) ?></p>
+            <span><?= date("d M Y", strtotime($book['date'])) ?></span>
+        </div>
+        <article class="book-content">
         
-            <?php foreach ($page as $page): ?>ent">
+            <?php foreach ($page as $page): ?>
             <div class="page">
                 <h2>Chapitre 1</h2>
                 <p>
@@ -24,7 +29,7 @@ ob_start();
                     <?= htmlspecialchars($page['author']) ?>
                 </span>
                 <span>
-                    <?= htmlspecialchars($page['numPage']) ?>
+                    <?= htmlspecialchars($page['num_page']) ?>
                 </span>
 
             </div>

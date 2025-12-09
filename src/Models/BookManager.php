@@ -21,27 +21,38 @@ class BookManager
         return $this->bdd;
     }
 
-    public function findBookPage($id_livre): array
+    public function findBookPage($book_id): array
     {
         $sql = "SELECT *
-        FROM pages
-        WHERE book_id = :id_livre
-        ORDER BY numPage ASC;
+            FROM pages
+            WHERE book_id = :book_id
+            ORDER BY num_page ASC";
+
+        $stmt = $this->bdd->prepare($sql);
+        $stmt->execute(['book_id' => $book_id]);
+
+        return $stmt->fetchAll(\PDO::FETCH_ASSOC);
+    }
+    public function findBookid($id): array
+    {
+        $sql = "SELECT *
+        FROM livres
+        WHERE id = :id;
         ";
         $stmt = $this->bdd->prepare($sql);
-        $stmt->execute(['id_livre' => $id_livre]);
+        $stmt->execute(['id' => $id]);
 
         return $stmt->fetchAll(\PDO::FETCH_ASSOC);
     }
 
-    public function delete($id_livre)
+    public function delete($id)
     {
-        $sql = "DELETE FROM pages WHERE book_id = :id_livre";
+        $sql = "DELETE FROM pages WHERE book_id = :id";
         $stmt = $this->bdd->prepare($sql);
-        $stmt->execute(['id_livre' => $id_livre]);
+        $stmt->execute(['id' => $id]);
 
-        $sql = "DELETE FROM livres WHERE id_livre = :id_livre";
+        $sql = "DELETE FROM livres WHERE id = :id";
         $stmt = $this->bdd->prepare($sql);
-        $stmt->execute(['id_livre' => $id_livre]);
+        $stmt->execute(['id' => $id]);
     }
 }
