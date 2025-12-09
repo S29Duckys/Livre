@@ -20,5 +20,6 @@ class HomeController
 
         require VIEWS . 'App/homepage.php';
     }
-}
 
+
+}

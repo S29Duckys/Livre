@@ -6,20 +6,24 @@ use livre\Models\UserManager;
 use livre\Validator;
 
 /** Class UserController **/
-class UserController {
+class UserController
+{
     private $manager;
     private $validator;
 
-    public function __construct() {
+    public function __construct()
+    {
         $this->manager = new UserManager();
         $this->validator = new Validator();
     }
 
-    public function showLogin() {
+    public function showLogin()
+    {
         require VIEWS . 'Auth/login.php';
     }
 
-    public function showRegister() {
+    public function showRegister()
+    {
         require VIEWS . 'Auth/register.php';
     }
 
@@ -30,11 +34,12 @@ class UserController {
         header('Location: /auth/login/');
     }
 
-    public function register() {
+    public function register()
+    {
         $this->validator->validate([
-            "username"=>["required", "min:3", "alphaNum"],
-            "password"=>["required", "min:6", "alphaNum", "confirm"],
-            "passwordConfirm"=>["required", "min:6", "alphaNum"]
+            "username" => ["required", "min:3", "alphaNum"],
+            "password" => ["required", "min:6", "alphaNum", "confirm"],
+            "passwordConfirm" => ["required", "min:6", "alphaNum"]
         ]);
         $_SESSION['old'] = $_POST;
 
@@ -60,10 +65,11 @@ class UserController {
         }
     }
 
-    public function login() {
+    public function login()
+    {
         $this->validator->validate([
-            "username"=>["required", "min:3", "max:9", "alphaNum"],
-            "password"=>["required", "min:6", "alphaNum"]
+            "username" => ["required", "min:3", "max:9", "alphaNum"],
+            "password" => ["required", "min:6", "alphaNum"]
         ]);
 
         $_SESSION['old'] = $_POST;

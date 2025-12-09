@@ -23,7 +23,7 @@ class HomeManager
 
     public function findAll(): array
     {
-        $sql = "SELECT * FROM livre";
+        $sql = "SELECT * FROM livres";
         $query = $this->bdd->prepare($sql);
         $query->execute();
 
