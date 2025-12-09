@@ -1,6 +1,540 @@
-* {
+/* http://meyerweb.com/eric/tools/css/reset/ 
+   v2.0 | 20110126
+   License: none (public domain)
+*/
+
+html,
+body,
+div,
+span,
+applet,
+object,
+iframe,
+h1,
+h2,
+h3,
+h4,
+h5,
+h6,
+p,
+blockquote,
+pre,
+a,
+abbr,
+acronym,
+address,
+big,
+cite,
+code,
+del,
+dfn,
+em,
+img,
+ins,
+kbd,
+q,
+s,
+samp,
+small,
+strike,
+strong,
+sub,
+sup,
+tt,
+var,
+b,
+u,
+i,
+center,
+dl,
+dt,
+dd,
+ol,
+ul,
+li,
+fieldset,
+form,
+label,
+legend,
+table,
+caption,
+tbody,
+tfoot,
+thead,
+tr,
+th,
+td,
+article,
+aside,
+canvas,
+details,
+embed,
+figure,
+figcaption,
+footer,
+header,
+hgroup,
+menu,
+nav,
+output,
+ruby,
+section,
+summary,
+time,
+mark,
+audio,
+video {
   margin: 0;
   padding: 0;
-  box-sizing: border-box;
+  border: 0;
+  font-size: 100%;
+  font: inherit;
+  vertical-align: baseline;
+}
+/* HTML5 display-role reset for older browsers */
+article,
+aside,
+details,
+figcaption,
+figure,
+footer,
+header,
+hgroup,
+menu,
+nav,
+section {
+  display: block;
+}
+body {
+  line-height: 1;
+}
+ol,
+ul {
+  list-style: none;
+}
+blockquote,
+q {
+  quotes: none;
+}
+blockquote:before,
+blockquote:after,
+q:before,
+q:after {
+  content: "";
+  content: none;
+}
+table {
+  border-collapse: collapse;
+  border-spacing: 0;
 }
 
+/* --- Styles globaux --- */
+body {
+  font-family: "Segoe UI", Tahoma, Geneva, Verdana, sans-serif;
+  background-color: #f9f9f9;
+  color: #333;
+  margin: 0;
+  padding: 0;
+}
+
+/* --- Header du livre --- */
+.book-header {
+  background-color: #4a90e2;
+  color: #fff;
+  padding: 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.book-header h1#book-title {
+  margin: 0;
+  font-size: 1.8rem;
+}
+
+.book-header .back-btn {
+  background-color: #fff;
+  color: #4a90e2;
+  border: none;
+  padding: 8px 15px;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 1rem;
+  transition: background-color 0.3s;
+}
+
+.book-header .back-btn:hover {
+  background-color: #e1eaff;
+}
+
+/* --- Conteneur principal --- */
+.book-container {
+  max-width: 800px;
+  margin: 30px auto;
+  padding: 0 20px;
+}
+
+/* --- Article contenant les pages --- */
+.book-container article.book-cont {
+  display: flex;
+  flex-direction: column;
+  gap: 30px; /* espace entre les pages */
+}
+
+/* --- Page individuelle --- */
+.book-container .page {
+  background-color: #fff;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+}
+
+.book-container .page h2 {
+  margin-top: 0;
+  color: #4a90e2;
+  font-size: 1.4rem;
+}
+
+.book-container .page p {
+  line-height: 1.6;
+  font-size: 1rem;
+  margin: 10px 0;
+}
+
+.book-container .page span {
+  display: block;
+  font-size: 0.85rem;
+  color: #666;
+  margin-top: 5px;
+}
+
+body {
+  font-family: Arial, sans-serif;
+  background-color: #f5f5f5;
+  margin: 0;
+  padding: 0;
+}
+
+header {
+  background-color: #9c84ff;
+  color: white;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem 2rem;
+}
+
+header h1 {
+  margin: 0;
+  font-size: 1.5rem;
+}
+
+header a {
+  color: white;
+  text-decoration: none;
+  font-weight: bold;
+}
+
+main {
+  padding: 2rem;
+}
+
+.books-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.books-header h2 {
+  margin: 0;
+}
+
+.books-header button {
+  padding: 0.5rem 1rem;
+  background-color: #28a745;
+  border: none;
+  color: white;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.books-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 1rem;
+}
+
+.book-card {
+  background-color: white;
+  border-radius: 6px;
+  padding: 1rem;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.book-card h3 {
+  margin: 0 0 0.5rem 0;
+  font-size: 1.1rem;
+}
+
+.book-card p {
+  margin: 0 0 1rem 0;
+  font-size: 0.95rem;
+  color: #333;
+}
+
+.book-meta {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 0.85rem;
+  color: #555;
+}
+
+.book-meta .eye-btn {
+  background-color: #17a2b8;
+  border: none;
+  color: white;
+  padding: 0.3rem 0.5rem;
+  border-radius: 4px;
+  cursor: pointer;
+}
+
+.icon {
+  margin-right: 0.3rem;
+}
+
+body {
+  background-color: #f5f5f5;
+}
+
+.container {
+  max-width: 600px;
+  margin: 30px auto;
+  background-color: white;
+  border-radius: 8px;
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+  overflow: hidden;
+}
+
+.form-header {
+  background-color: #f8f9fa;
+  padding: 15px 20px;
+  border-bottom: 1px solid #e9ecef;
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-header h2 {
+  font-size: 18px;
+  color: #333;
+}
+
+.form-header svg {
+  width: 20px;
+  height: 20px;
+  fill: #7b2cbf;
+}
+
+.form-container {
+  padding: 20px;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  gap: 8px;
+  font-size: 14px;
+  color: #555;
+  margin-bottom: 8px;
+}
+
+.form-group svg {
+  width: 16px;
+  height: 16px;
+  fill: #7b2cbf;
+}
+
+.form-group input,
+.form-group textarea {
+  width: 100%;
+  padding: 10px;
+  border: 1px solid #ddd;
+  border-radius: 4px;
+  font-size: 14px;
+}
+
+.form-group textarea {
+  height: 120px;
+  resize: vertical;
+}
+
+.form-group.date-group {
+  display: flex;
+  align-items: center;
+  gap: 10px;
+}
+
+.form-group.date-group input {
+  width: auto;
+}
+
+.button-group {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 20px;
+}
+
+.btn {
+  padding: 10px 20px;
+  border: none;
+  border-radius: 4px;
+  font-size: 14px;
+  cursor: pointer;
+}
+
+.btn-create {
+  background-color: #4caf50;
+  color: white;
+}
+
+.btn-create:hover {
+  background-color: #45a049;
+}
+
+.header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 40px;
+}
+
+.header h1 {
+  font-size: 2.4rem;
+  color: #344675;
+}
+
+.header a {
+  padding: 10px 18px;
+  background: #4a6cf7;
+  color: white;
+  border-radius: 6px;
+  text-decoration: none;
+  transition: 0.3s;
+}
+
+.header a:hover {
+  background: #3454db;
+}
+
+/* ------------------------- */
+/*         FORM WRAP         */
+/* ------------------------- */
+.container {
+  width: 100%;
+  max-width: 650px;
+  margin: auto;
+  background: white;
+  padding: 35px;
+  border-radius: 12px;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.08);
+}
+
+.form-header {
+  display: flex;
+  align-items: center;
+  margin-bottom: 25px;
+}
+
+.form-header svg {
+  width: 32px;
+  height: 32px;
+  fill: #4a6cf7;
+  margin-right: 12px;
+}
+
+.form-header h2 {
+  font-size: 1.8rem;
+}
+
+/* ------------------------- */
+/*       FORM GROUPS         */
+/* ------------------------- */
+.form-group {
+  margin-bottom: 20px;
+  display: flex;
+  flex-direction: column;
+}
+
+.form-group label {
+  display: flex;
+  align-items: center;
+  font-weight: 600;
+  margin-bottom: 6px;
+  color: #555;
+}
+
+.form-group label svg {
+  width: 22px;
+  height: 22px;
+  fill: #4a6cf7;
+  margin-right: 8px;
+}
+
+.form-group input,
+.form-group textarea {
+  padding: 12px;
+  border: 1.5px solid #ccd4e2;
+  border-radius: 8px;
+  font-size: 1rem;
+  outline: none;
+  transition: border-color 0.25s ease;
+}
+
+.form-group input:focus,
+.form-group textarea:focus {
+  border-color: #4a6cf7;
+}
+
+textarea {
+  min-height: 120px;
+  resize: vertical;
+}
+
+/* ------------------------- */
+/*      DATE INPUT FIX       */
+/* ------------------------- */
+.date-group input {
+  width: 200px;
+}
+
+/* ------------------------- */
+/*         BUTTONS           */
+/* ------------------------- */
+.button-group {
+  margin-top: 30px;
+  text-align: right;
+}
+
+.btn-create {
+  padding: 12px 28px;
+  background: #4a6cf7;
+  color: white;
+  border: none;
+  border-radius: 8px;
+  font-size: 1rem;
+  cursor: pointer;
+  transition: 0.3s ease;
+}
+
+.btn-create:hover {
+  background: #3454db;
+}

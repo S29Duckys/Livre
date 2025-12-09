@@ -29,4 +29,5 @@ class HomeManager
 
         return $query->fetchAll(\PDO::FETCH_ASSOC);
     }
+    
 }

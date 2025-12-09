@@ -17,9 +17,13 @@ class BookController
     public function index($book_id)
     {
         $page = $this->manager->findBookPage($book_id);
-       
-        require VIEWS . 'App/readpage.php';
 
+        require VIEWS . 'App/readpage.php';
+    }
+    public function del($book_id)
+    {
+        $page = $this->manager->delete($book_id);
+
+        header("Location: /");
     }
 }
-

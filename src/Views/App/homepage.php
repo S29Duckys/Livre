@@ -9,13 +9,13 @@ ob_start();
 
     <header>
         <h1>Mes Livres</h1>
-        <a href="#">Voir Livres</a>
+        <a href="/">Voir Livres</a>
     </header>
 
     <main>
         <div class="books-header">
             <h2>Tout Les Livres</h2>
-            <button>Créer</button>
+            <a href="<?= "/createBook/" ?>"><button>Créé</button></a>
         </div>
 
         <div class="books-grid">
@@ -31,10 +31,11 @@ ob_start();
                         <span>🕒 Sortie le
                             <?= date("d M Y", strtotime($book['date'])) ?>
                         </span>
-                        <form action="<?= "/book/". htmlspecialchars($book['id_livre']) ?>" method="post">
+                        <form action="<?= "/book/" . htmlspecialchars($book['id_livre']) ?>" method="post">
                             <input type="hidden" name="book_id" value="<?= $book['id_livre'] ?>">
                             <button type="submit" class="eye-btn">👁</button>
                         </form>
+                        <a href="<?= "/delbook/" . htmlspecialchars($book['id_livre']) ?>"><button>del</button></a>
                     </div>
                 </div>
             <?php endforeach; ?>
