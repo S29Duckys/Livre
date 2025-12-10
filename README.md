@@ -38,8 +38,8 @@ Un projet de gestion de bibliothèque en ligne développé avec **HTML/CSS/JavaS
 
 ### 1. Cloner le projet
 ```bash
-git clone https://github.com/votre-utilisateur/bibliotheque-en-ligne.git
-cd bibliotheque-en-ligne
+git clone https://github.com/votre-utilisateur/livre.git
+cd livre
 ```
 
 ### 2. Installer les dépendances avec Composer
@@ -56,14 +56,14 @@ composer install
 - Assurez-vous que le serveur est configuré pour exécuter des fichiers PHP.
 
 ### 5. Lancer le projet
-- Accédez à l'URL de votre projet dans un navigateur web (par exemple, `http://localhost/bibliotheque-en-ligne/public`).
+- Accédez à l'URL de votre projet dans un navigateur web (par exemple, `http://localhost/livre/public`).
 
 ---
 
 ## Structure du Projet
 
 ```bash
-bibliotheque-en-ligne/
+livre/
 ├── public/               # Fichiers accessibles publiquement
 │   ├── style.css         # Styles CSS
 │   ├── index.php         # Point d'entrée du projet
