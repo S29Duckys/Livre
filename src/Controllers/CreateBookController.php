@@ -22,7 +22,7 @@ class CreateBookController
     public function store()
     {
         $title       = $_POST['titre'] ?? null;
-        $author      = $_POST['authorr'] ?? null;
+        $author      = $_POST['author'] ?? null;
         $description = $_POST['description'] ?? null;
         $url         = $_POST['url'] ?? null;
         $date        = $_POST['date'] ?? null;

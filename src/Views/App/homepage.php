@@ -35,7 +35,7 @@ ob_start();
                             <input type="hidden" name="book_id" value="<?= $book['id'] ?>">
                             <button type="submit" class="eye-btn">👁</button>
                         </form>
-                        <a href="<?= "/delbook/" . htmlspecialchars($book['id']) ?>"><button>del</button></a>
+                        <a href="<?= "/delbook/" . htmlspecialchars($book['id']) ?>"><button class="btn-del">del</button></a>
                     </div>
                 </div>
             <?php endforeach; ?>

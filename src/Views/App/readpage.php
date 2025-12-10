@@ -21,7 +21,6 @@ ob_start();
         
             <?php foreach ($page as $page): ?>
             <div class="page">
-                <h2>Chapitre 1</h2>
                 <p>
                     <?= htmlspecialchars($page['content']) ?>
                 </p>
