@@ -20,7 +20,6 @@ Un projet de gestion de bibliothèque en ligne développé avec **HTML/CSS/JavaS
 ---
 
 ## Fonctionnalités Non Implémentées
-
 - **Modification des livres** : Bouton pour modifier les informations d'un livre depuis la page d'affichage.
 - **Système de connexion (Login)** : Authentification des utilisateurs pour accéder à certaines fonctionnalités.
 - **Pagination des livres** : Affichage des livres par pages dans la partie détaillée.
@@ -28,7 +27,6 @@ Un projet de gestion de bibliothèque en ligne développé avec **HTML/CSS/JavaS
 ---
 
 ## Prérequis
-
 - PHP (version 8.0 ou supérieure)
 - Composer (pour gérer les dépendances PHP)
 - Serveur MySQL (ou MariaDB)
@@ -42,28 +40,29 @@ Un projet de gestion de bibliothèque en ligne développé avec **HTML/CSS/JavaS
 ```bash
 git clone https://github.com/votre-utilisateur/bibliotheque-en-ligne.git
 cd bibliotheque-en-ligne
+```
 
-2. Installer les dépendances avec Composer
-bash
-Copier
-
+### 2. Installer les dépendances avec Composer
+```bash
 composer install
+```
 
-3. Configurer la base de données
+### 3. Configurer la base de données
+- Importez le fichier `db.sql` dans votre serveur MySQL pour créer la structure de la base de données.
+- Modifiez le fichier `src/config.php` pour configurer les informations de connexion à votre base de données.
 
-Importez le fichier db.sql dans votre serveur MySQL pour créer la structure de la base de données.
-Modifiez le fichier src/config.php pour configurer les informations de connexion à votre base de données.
-4. Configurer le serveur web
+### 4. Configurer le serveur web
+- Placez le projet dans le répertoire racine de votre serveur web (par exemple, `htdocs` pour Apache).
+- Assurez-vous que le serveur est configuré pour exécuter des fichiers PHP.
 
-Placez le projet dans le répertoire racine de votre serveur web (par exemple, htdocs pour Apache).
-Assurez-vous que le serveur est configuré pour exécuter des fichiers PHP.
-5. Lancer le projet
+### 5. Lancer le projet
+- Accédez à l'URL de votre projet dans un navigateur web (par exemple, `http://localhost/bibliotheque-en-ligne/public`).
 
-Accédez à l'URL de votre projet dans un navigateur web (par exemple, http://localhost/bibliotheque-en-ligne/public).
+---
 
-Structure du Projet
-Copier
+## Structure du Projet
 
+```bash
 bibliotheque-en-ligne/
 ├── public/               # Fichiers accessibles publiquement
 │   ├── style.css         # Styles CSS
@@ -78,26 +77,28 @@ bibliotheque-en-ligne/
 ├── db.sql                # Script SQL pour la base de données
 ├── composer.json         # Dépendances PHP
 └── README.md             # Ce fichier
-
-
-Utilisation
-
-Accéder à la page d'accueil : Vous verrez la liste des livres disponibles.
-Ajouter un livre : Cliquez sur le bouton "Create Book" et remplissez le formulaire.
-Afficher un livre : Cliquez sur le bouton "Afficher" pour voir les détails du livre.
-Supprimer un livre : Cliquez sur le bouton "Supprimer" pour retirer un livre de la bibliothèque.
-
-Améliorations Futures
-
-Implémenter le système de connexion pour sécuriser l'accès.
-Ajouter la fonctionnalité de modification des livres.
-Améliorer l'interface utilisateur pour une meilleure expérience.
-Ajouter la pagination pour les livres détaillés.
-
-Licence
-Ce projet est sous licence MIT. Voir le fichier LICENCE pour plus d'informations.
-Copier
+```
 
 ---
-N'hésitez pas à me dire si vous souhaitez ajouter ou modifier des sections !
 
+## Utilisation
+
+1. **Accéder à la page d'accueil** : Vous verrez la liste des livres disponibles.
+2. **Ajouter un livre** : Cliquez sur le bouton "Create Book" et remplissez le formulaire.
+3. **Afficher un livre** : Cliquez sur le bouton "Afficher" pour voir les détails du livre.
+4. **Supprimer un livre** : Cliquez sur le bouton "Supprimer" pour retirer un livre de la bibliothèque.
+
+---
+
+## Améliorations Futures
+
+- Implémenter le système de connexion pour sécuriser l'accès.
+- Ajouter la fonctionnalité de modification des livres.
+- Améliorer l'interface utilisateur pour une meilleure expérience.
+- Ajouter la pagination pour les livres détaillés.
+
+---
+
+## Licence
+
+Ce projet est sous licence MIT. Voir le fichier [LICENCE](LICENCE) pour plus d'informations.
